@@ -9,7 +9,13 @@ get '/secret' do
   "If you are on this page, and reading this, you should not be"
 end
 
-get '/cat' do
+get '/name_cat' do
+  p params
+  @name_selector = params[:name]
+  erb(:index)
+end
+
+get '/random_cat' do
   @name_selector = ["Cameron", "Adrian", "AT", "CL"].sample
   erb(:index)
 end
